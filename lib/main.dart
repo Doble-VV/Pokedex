@@ -1,20 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:pokedex/pages/menu.dart';
 
 void main() {
-  runApp(const MainApp());
+  runApp(const PokedexMain());
 }
 
-class MainApp extends StatelessWidget {
-  const MainApp({super.key});
-
+class PokedexMain extends StatelessWidget {
+  const PokedexMain({super.key});
+  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
-        ),
+    return MaterialApp(
+      title: 'POKEDEX',
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        useMaterial3: true,
       ),
+      home: const Menu(title: 'POKEDEX'),
     );
   }
 }
